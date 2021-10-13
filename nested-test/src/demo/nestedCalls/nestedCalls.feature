@@ -4,6 +4,7 @@ Feature: web-browser automation
         Background:
         * configure driver = { type: 'chrome' }
 
-        Scenario: Test nested calls context change
-        * driver 'https://www.youtube.com/'
-        * def search = call read("search.feature@pollAccount")
+        Scenario: Level 1
+              And print "This is Level 1"
+        * def level2 = call read("search.feature@level2")
+        
